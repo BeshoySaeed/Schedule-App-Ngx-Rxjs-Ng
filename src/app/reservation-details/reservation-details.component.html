@@ -1,0 +1,107 @@
+<div class="reservation container">
+  <div class="available-res px-4">
+    <label for="res-id" class="g-label">
+      {{ "reservation.availability" | translate }}</label
+    >
+
+    <!-- reservation section -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="input-group">
+            <input
+              type="number"
+              min="0"
+              value="1"
+              id="res-id"
+              class="form-control reservation-input"
+            />
+            <div class="input-group-append">
+              <select name="" class="form-control timeSelect">
+                <option value="month">
+                  {{ "reservation.month" | translate }}
+                </option>
+                <option value="week">
+                  {{ "reservation.week" | translate }}
+                </option>
+                <option value="day">{{ "reservation.day" | translate }}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="checkbox-reservation flex mt-2">
+      <p class="g-label">{{ "reservation.userTime" | translate }}</p>
+      <div class="time-service">
+        <label class="check-box">
+          <input
+            type="radio"
+            name="reservationType"
+            value="serviceTime"
+            [(ngModel)]="fixedTime"
+          />
+          <fa-icon [icon]="cubeIcon" class="grayIcon"></fa-icon>
+          {{ "reservation.service" | translate }}
+        </label>
+        <label class="check-box">
+          <input
+            type="radio"
+            name="reservationType"
+            value="fixedTime"
+            [(ngModel)]="fixedTime"
+          />
+          <fa-icon [icon]="watchIcon" class="grayIcon"></fa-icon>
+          {{ "reservation.fixed" | translate }}
+        </label>
+        <div class="time-counter" *ngIf="fixedTime === 'fixedTime'">
+          <button class="counter-button" (click)="decrease()">-</button>
+          <p class="time-value">
+            {{ timeVal }}{{ "reservation.min" | translate }}
+          </p>
+          <button class="counter-button" (click)="increase()">+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="checkbox-reservation">
+      <p class="g-label">{{ "reservation.userRes" | translate }}</p>
+      <div class="booking-service">
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <label class="me-4">
+              <input
+                type="radio"
+                name="bookingType"
+                value="onlyOne"
+                [(ngModel)]="dateNum"
+              />
+              <fa-icon [icon]="userIcon" class="mx-2"></fa-icon>
+              {{ "reservation.oneRes" | translate }}
+            </label>
+          </div>
+          <div class="col-12 col-md-6">
+            <label class="">
+              <input
+                type="radio"
+                name="bookingType"
+                value="MoreThanOne"
+                [(ngModel)]="dateNum"
+              />
+              <fa-icon [icon]="usersIcon" class="mx-2"></fa-icon>
+              {{ "reservation.moreRes" | translate }}
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <div class="hidden w-100 w-md-50" *ngIf="dateNum === 'MoreThanOne'">
+              <input type="number" name="" id="" class="form-control" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

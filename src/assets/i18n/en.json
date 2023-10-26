@@ -1,0 +1,44 @@
+{
+  "dir" : "ltr",
+
+  "user":{
+      "name" : "user name",
+      "chooseRes": "Choose Reservation Type",
+      "dayRes" : "book one day",
+      "more"   : "Booking duration(more than one day)"
+  },
+
+  "reservation": {
+    "availability" : "user is available",
+    "userTime" : "user time",
+    "service" : "service time",
+    "fixed" : "fixed time",
+    "min" : "minute",
+    "userRes" : "user reservation",
+    "oneRes" : "one reservation",
+    "moreRes" : "more than one reservation",
+    "month" : "Month",
+    "week" : "Week",
+    "day" : "Day"
+  },
+
+  "schedule": {
+    "title" : "Select the user's working hours",
+    "message" : "Configure your week settings here. Simply move the sliders and add/remove break times to set up work hours."
+  },
+
+
+  "common" : {
+    "saturday" : "saturday",
+    "sunday" : "sunday",
+    "monday" : "monday",
+    "tuesday" : "tuesday",
+    "wednesday": "wednesday",
+    "thursday" : "thursday",
+    "friday" : "friday",
+    "startDate" : "start time",
+    "endDate"   : "end time",
+    "advancedSetting" : "Advanced Setting",
+    "basicSetting" : "Basic setting"
+  }
+}
